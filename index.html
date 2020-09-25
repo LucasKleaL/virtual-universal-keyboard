@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Universal Digital Keyboard</title>
+        <link rel="shortcut icon" type="img" href="">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="js/jquery-3.5.1.js"></script> 
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+
+    <body>
+
+        <div class="div-navbar">
+            <nav>
+
+            </nav>
+        </div>
+
+        <div class="container">
+
+        <div class="div-text-area" align="center">
+
+            <textarea class="text-area" id="textVisor"></textarea>
+
+        </div>
+
+        <div class="div-keyboard">
+
+            <table cellpadding="1" align="center">
+                <tr>
+    
+                    <!--1--> <td><button class="button-keyboard" id="button01">'</button></td> 
+                    <!--2--> <td><button class="button-keyboard" id=button02>1</button></td> 
+                    <!--3--> <td><button class="button-keyboard" id="button03">2</button></td> 
+                    <!--4--> <td><button class="button-keyboard" id=button04>3</button></td> 
+                    <!--5--> <td><button class="button-keyboard" id="button05">4</button></td> 
+                    <!--6--> <td><button class="button-keyboard" id="button06">5</button></td> 
+                    <!--7--> <td><button class="button-keyboard" id="button07">6</button></td> 
+                    <!--8--> <td><button class="button-keyboard" id="button08">7</button></td> 
+                    <!--9--> <td><button class="button-keyboard" id="button09">8</button></td> 
+                    <!--10--> <td><button class="button-keyboard"id="button10">9</button></td> 
+                    <!--11--> <td><button class="button-keyboard" id="button11">0</button></td> 
+                    <!--12--> <td><button class="button-keyboard" id=button12>-</button></td>
+                    <!--13--> <td><button class="button-keyboard" id=button13>=</button></td>
+                    <!--14/15--><td colspan="2" ><button class="button-keyboard-two-spaces" id="buttonBackSpace">⟵</button></td>
+    
+                </tr>
+    
+                <tr>
+    
+                    <!--1/2--> <td colspan="2"><button class="button-keyboard-two-spaces" id="buttonTab">↔</button></td> 
+                    <!--3--> <td><button class="button-keyboard" id="button14">Q</button></td> 
+                    <!--4--> <td><button class="button-keyboard" id="button15">W</button></td> 
+                    <!--5--> <td><button class="button-keyboard" id="button16">E</button></td> 
+                    <!--6--> <td><button class="button-keyboard" id="button17">R</button></td> 
+                    <!--7--> <td><button class="button-keyboard" id="button18">T</button></td> 
+                    <!--8--> <td><button class="button-keyboard" id="button19">Y</button></td> 
+                    <!--9--> <td><button class="button-keyboard" id="button20">U</button></td> 
+                    <!--10--> <td><button class="button-keyboard" id="button21">I</button></td> 
+                    <!--11--> <td><button class="button-keyboard" id="button22">O</button></td> 
+                    <!--12--> <td><button class="button-keyboard" id="button23">P</button></td> 
+                    <!--13--> <td><button class="button-keyboard" id="button24">[</button></td> 
+                    <!--14--><td><button class="button-keyboard" id="button25">]</button></td>
+                    <!--15--><td><button class="button-keyboard" id="button26">|</button></td> 
+    
+                </tr>
+    
+                <tr>
+    
+                    <!--1-2--> <td colspan="2"><button class="button-keyboard-two-spaces" id="buttonCaps">CAPS</button></td> 
+                    <!--3--> <td><button class="button-keyboard" id="button27">A</button></td> 
+                    <!--4--> <td><button class="button-keyboard" id="button28">S</button></td> 
+                    <!--5--> <td><button class="button-keyboard" id="button29">D</button></td> 
+                    <!--6--> <td><button class="button-keyboard" id="button30">F</button></td> 
+                    <!--7--> <td><button class="button-keyboard" id="button31">G</button></td> 
+                    <!--8--> <td><button class="button-keyboard" id="button32">H</button></td> 
+                    <!--9--> <td><button class="button-keyboard" id="button33">J</button></td> 
+                    <!--10--> <td><button class="button-keyboard" id="button34">K</button></td> 
+                    <!--11--> <td><button class="button-keyboard" id="button35">L</button></td> 
+                    <!--12--> <td><button class="button-keyboard" id="button36">;</button></td> 
+                    <!--13--> <td><button class="button-keyboard" id="button37">'</button></td> 
+                    <!--14/15--> <td colspan="2"><button class="button-keyboard-two-spaces" id="buttonEnter">⏎</button></td> 
+    
+                </tr>
+    
+                <tr>
+    
+                    <!--1-2--> <td colspan="2"><button class="button-keyboard-two-spaces" id="buttonLeftShift">⇑</button></td> 
+                    <!--3--> <td><button class="button-keyboard" id="button38">Z</button></td> 
+                    <!--4--> <td><button class="button-keyboard" id="button39">X</button></td> 
+                    <!--5--> <td><button class="button-keyboard" id="button40">C</button></td> 
+                    <!--6--> <td><button class="button-keyboard" id="button41">V</button></td> 
+                    <!--7--> <td><button class="button-keyboard" id="button42">B</button></td> 
+                    <!--8--> <td><button class="button-keyboard" id="button43">N</button></td> 
+                    <!--9--> <td><button class="button-keyboard" id="button44">M</button></td> 
+                    <!--10--> <td><button class="button-keyboard" id="button45">,</button></td> 
+                    <!--11--> <td><button class="button-keyboard" id="button46">.</button></td>
+                    <!--12--> <td><button class="button-keyboard" id="button47">/</button></td>
+                    <!--13/14/15--> <td colspan="3"><button class="button-keyboard-three-spaces" id="buttonRightShift">⇑</button></td> 
+    
+                </tr>
+    
+                <tr>
+    
+                    <!--1--> <td><button class="button-keyboard" id="buttonLeftCtrl">CTRL</button></td> 
+                    <!--2--> <td><button class="button-keyboard" id="buttonWindows"></button></td> 
+                    <!--3--> <td><button class="button-keyboard" id="buttonLeftAlt">ALT</button></td> 
+                    <!--4/5/6/7/8/9/10/11--> <td colspan="8"><button class="button-keyboard-eight-spaces" id="buttonSpace">SPACE</button></td>
+                    <!--12--> <td><button class="button-keyboard" id="buttonRightAlt">ALT</button></td> 
+                    <!--13--> <td><button class="button-keyboard" id="buttonFn">FN</button></td> 
+                    <!--14--> <td><button class="button-keyboard" id="buttonMenu">COPY</button></td> 
+                    <!--15--> <td><button class="button-keyboard" id="buttonRightCtrl">CTRL</button></td> 
+    
+                </tr>
+    
+            </table>
+
+        </div>
+        
+
+        </div>
+
+    </body>
+</html>
