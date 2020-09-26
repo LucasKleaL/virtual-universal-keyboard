@@ -8,6 +8,10 @@ $(document).ready(function(){
     var alt = "off"
     var ctrl = "off"
 
+    //variaveis de acentos
+    var acentoTil = "off"
+    var acentoGrave = "off"
+
     //variaveis relacionadas a lingua que o teclado irá operar
     var english = "on"
     var russian = "off"
@@ -18,7 +22,7 @@ $(document).ready(function(){
 
     //funções de cada botão
 
-    $("#buttonBackSpace").click(function(){ //botão para apagar (Back Space)
+    $("#buttonBackSpace").click(function(){ //botão para apagar (Backspace)
 
         var str = stringVisor.split('') //divide a cada caractere a string formada no visor (textarea). A variável str recebe uma lista em cada posição é um caractere
 
@@ -38,84 +42,229 @@ $(document).ready(function(){
         $("#textVisor").val(stringVisor)
     });
 
-    if(english === "on"){
+    $("#buttonLeftShift").click(function(){ //botão shift esquerdo
+
+        if (shift === "on"){ //verifica se o shift está ativo
+            shift = "off" //se estiver, desativa
+        }
+        else if (shift === "off") //se estiver desativado, ativa
+            shift = "on"
+
+        if (shift === "on"){ //verificação para mudar a cor do botão, quando ativado
+            $("#buttonLeftShift").removeClass("button-keyboard-two-spaces")
+            $("#buttonLeftShift").addClass("button-left-shift-active")
+        }
+        else if (shift === "off"){
+            $("#buttonLeftShift").removeClass("button-left-shift-active")
+            $("#buttonLeftShift").addClass("button-keyboard-two-spaces")
+        }
+    });
+
+    $("#buttonRightShift").click(function(){ //botão shift direito
+
+        shift = "on"
+
+    });
+
+    $("#buttonLeftAlt").click(function(){ //botão alt esquerdo
+
+        alt = "on"
+
+    });
+
+    $("#buttonRightAlt").click(function(){ //botão alt direito
+
+        alt = "on"
+
+    });
+
+    $("#buttonLeftCtrl").click(function(){ //botão ctrl esquerdo
+
+        ctrl = "on"
+
+    });
+
+    $("#buttonRightCtrl").click(function(){ //botão ctrl direito
+
+        ctrl = "on"
+
+    });
+
+    $("#buttonCaps").click(function(){ //botão caps look
+
+        caps = "on"
+
+    });
+
+    if(english === "on"){ //verifica se o modo ingles está ativo
 
         $("#button01").click(function(){
 
-            stringVisor += '‘'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o acento ~
+                stringVisor += '~'
+                $("#textVisor").val(stringVisor);
+            }
+            else if(shift === "off"){ //verifica se o shift está desligado, se estiver muda para o acento `
+                stringVisor += '`'
+                $("#textVisor").val(stringVisor); 
+            }
+        
         });
     
         $("#button02").click(function(){
 
-            stringVisor += '1'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo !
+                stringVisor += '!'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift ==="off") {
+                stringVisor += '1'
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button03").click(function(){
 
-            stringVisor += '2'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo @
+                stringVisor += '@'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '2'
+                $("#textVisor").val(stringVisor);
+            }
         })
 
         $("#button04").click(function(){
 
-            stringVisor += '3'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo #
+                stringVisor += '#'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '3'
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button05").click(function(){
 
-            stringVisor += '4'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo $
+                stringVisor += '$'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '4'
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button06").click(function(){
 
-            stringVisor += '5'
-            $("#textVisor").val(stringVisor);
+
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo %
+                stringVisor += '%'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '5'
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button07").click(function(){
 
-            stringVisor += '6'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo ^
+                stringVisor += '^'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '6'
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button08").click(function(){
 
-            stringVisor += '7'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo &
+                stringVisor += '&'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '7'
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button09").click(function(){
 
-            stringVisor += '8'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo &
+                stringVisor += '*'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '8'
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button10").click(function(){
 
-            stringVisor += '9'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo *
+                stringVisor += '('
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '9'
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button11").click(function(){
 
-            stringVisor += '0'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo (
+                stringVisor += ')'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '0'
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button12").click(function(){
 
-            stringVisor += '-'
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo )
+                stringVisor += '_'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '-'
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button13").click(function(){
 
-            stringVisor += '='
-            $("#textVisor").val(stringVisor);
+            if (shift === "on"){ //verifica se o shift está ativo, se estiver muda para o simbolo _
+                stringVisor += '+'
+                $("#textVisor").val(stringVisor);
+            }
+            else if (shift === "off"){
+
+                stringVisor += '='
+                $("#textVisor").val(stringVisor);
+            }
         });
 
         $("#button14").click(function(){
@@ -134,6 +283,7 @@ $(document).ready(function(){
 
             stringVisor += 'e'
             $("#textVisor").val(stringVisor);
+
         });
 
 
