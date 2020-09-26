@@ -51,19 +51,40 @@ $(document).ready(function(){
             shift = "on"
 
         if (shift === "on"){ //verificação para mudar a cor do botão, quando ativado
+            $("#buttonRightShift").removeClass("button-keyboard-three-spaces")
             $("#buttonLeftShift").removeClass("button-keyboard-two-spaces")
+            $("#buttonRightShift").addClass("button-right-shift-active")
             $("#buttonLeftShift").addClass("button-left-shift-active")
         }
-        else if (shift === "off"){
+        else if (shift === "off"){ //verificação para mudar a cor do botão, quando desativado
+            $("#buttonRightShift").removeClass("button-right-shift-active")
             $("#buttonLeftShift").removeClass("button-left-shift-active")
+            $("#buttonRightShift").addClass("button-keyboard-three-spaces")
             $("#buttonLeftShift").addClass("button-keyboard-two-spaces")
         }
     });
 
     $("#buttonRightShift").click(function(){ //botão shift direito
 
-        shift = "on"
+        if (shift === "on"){
+            shift = "off"
+        }
+        else if (shift === "off"){
+            shift = "on"
+        }
 
+        if (shift === "on"){
+            $("#buttonRightShift").removeClass("button-keyboard-three-spaces")
+            $("#buttonLeftShift").removeClass("button-keyboard-two-spaces")
+            $("#buttonRightShift").addClass("button-right-shift-active")
+            $("#buttonLeftShift").addClass("button-left-shift-active")
+        }
+        else if (shift === "off"){
+            $("#buttonRightShift").removeClass("button-right-shift-active")
+            $("#buttonLeftShift").removeClass("button-left-shift-active")
+            $("#buttonRightShift").addClass("button-keyboard-three-spaces")
+            $("#buttonLeftShift").addClass("button-keyboard-two-spaces")
+        }
     });
 
     $("#buttonLeftAlt").click(function(){ //botão alt esquerdo
@@ -92,7 +113,21 @@ $(document).ready(function(){
 
     $("#buttonCaps").click(function(){ //botão caps look
 
-        caps = "on"
+        if (caps === "off"){
+            caps = "on"
+        }
+        else if (caps === "on"){
+            caps = "off"
+        }
+
+        if (caps === "on"){
+            $("#buttonCaps").removeClass("button-keyboard-two-spaces")
+            $("#buttonCaps").addClass("button-caps-active")
+        }
+        else if (caps === "off"){
+            $("#buttonCaps").removeClass("button-caps-active")
+            $("#buttonCaps").addClass("button-keyboard-two-spaces")
+        }
 
     });
 
@@ -269,64 +304,113 @@ $(document).ready(function(){
 
         $("#button14").click(function(){
 
-            stringVisor += 'q'
+            if (caps === "on"){
+                stringVisor += 'Q'
+            }
+            else if (caps === "off"){
+                stringVisor += 'q'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button15").click(function(){
 
-            stringVisor += 'w'
+            if (caps === "on"){
+                stringVisor += 'W'
+            }
+            else if (caps === "off"){
+                stringVisor += 'w'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button16").click(function(){
 
-            stringVisor += 'e'
+            if (caps === "on"){
+                stringVisor += 'E'
+            }
+            else if (caps === "off"){
+                stringVisor += 'e'
+            }
             $("#textVisor").val(stringVisor);
-
         });
 
 
         $("#button17").click(function(){
 
-            stringVisor += 'r'
+            if (caps === "on"){
+                stringVisor += 'R'
+            }
+            else if (caps === "off"){
+                stringVisor += 'r'
+            }
             $("#textVisor").val(stringVisor);
         });
 
 
         $("#button18").click(function(){
 
-            stringVisor += 't'
+            if (caps === "on"){
+                stringVisor += 'T'
+            }
+            else if (caps === "off"){
+                stringVisor += 't'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button19").click(function(){
 
-            stringVisor += 'y'
+            if (caps === "on"){
+                stringVisor += 'Y'
+            }
+            else if (caps === "off"){
+                stringVisor += 'y'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button20").click(function(){
 
-            stringVisor += 'u'
+            if (caps === "on"){
+                stringVisor += 'U'
+            }
+            else if (caps === "off"){
+                stringVisor += 'u'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button21").click(function(){
 
-            stringVisor += 'i'
+            if (caps === "on"){
+                stringVisor += 'I'
+            }
+            else if (caps === "off"){
+                stringVisor += 'i'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button22").click(function(){
 
-            stringVisor += 'o'
+            if (caps === "on"){
+                stringVisor += 'O'
+            }
+            else if (caps === "off"){
+                stringVisor += 'o'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button23").click(function(){
 
-            stringVisor += 'p'
+            if (caps === "on"){
+                stringVisor += 'P'
+            }
+            else if (caps === "off"){
+                stringVisor += 'p'
+            }
             $("#textVisor").val(stringVisor);
         });
 
@@ -350,55 +434,100 @@ $(document).ready(function(){
 
         $("#button27").click(function(){
 
-            stringVisor += 'a'
+            if (caps === "on"){
+                stringVisor += 'A'
+            }
+            else if (caps === "off"){
+                stringVisor += 'a'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button28").click(function(){
 
-            stringVisor += 's'
+            if (caps === "on"){
+                stringVisor += 'S'
+            }
+            else if (caps === "off"){
+                stringVisor += 's'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button29").click(function(){
 
-            stringVisor += 'd'
+            if (caps === "on"){
+                stringVisor += 'D'
+            }
+            else if (caps === "off"){
+                stringVisor += 'd'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button30").click(function(){
 
-            stringVisor += 'f'
+            if (caps === "on"){
+                stringVisor += 'F'
+            }
+            else if (caps === "off"){
+                stringVisor += 'f'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button31").click(function(){
 
-            stringVisor += 'g'
+            if (caps === "on"){
+                stringVisor += 'G'
+            }
+            else if (caps === "off"){
+                stringVisor += 'g'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button32").click(function(){
 
-            stringVisor += 'h'
+            if (caps === "on"){
+                stringVisor += 'H'
+            }
+            else if (caps === "off"){
+                stringVisor += 'h'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button33").click(function(){
 
-            stringVisor += 'j'
+            if (caps === "on"){
+                stringVisor += 'J'
+            }
+            else if (caps === "off"){
+                stringVisor += 'j'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button34").click(function(){
 
-            stringVisor += 'k'
+            if (caps === "on"){
+                stringVisor += 'K'
+            }
+            else if (caps === "off"){
+                stringVisor += 'k'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button35").click(function(){
 
-            stringVisor += 'l'
+            if (caps === "on"){
+                stringVisor += 'L'
+            }
+            else if (caps === "off"){
+                stringVisor += 'l'
+            }
             $("#textVisor").val(stringVisor);
         });
 
@@ -416,43 +545,78 @@ $(document).ready(function(){
 
         $("#button38").click(function(){
 
-            stringVisor += 'z'
+            if (caps === "on"){
+                stringVisor += 'Z'
+            }
+            else if (caps === "off"){
+                stringVisor += 'z'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button39").click(function(){
 
-            stringVisor += 'x'
+            if (caps === "on"){
+                stringVisor += 'X'
+            }
+            else if (caps === "off"){
+                stringVisor += 'x'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button40").click(function(){
 
-            stringVisor += 'c'
+            if (caps === "on"){
+                stringVisor += 'C'
+            }
+            else if (caps === "off"){
+                stringVisor += 'c'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button41").click(function(){
 
-            stringVisor += 'v'
+            if (caps === "on"){
+                stringVisor += 'V'
+            }
+            else if (caps === "off"){
+                stringVisor += 'v'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button42").click(function(){
 
-            stringVisor += 'b'
+            if (caps === "on"){
+                stringVisor += 'V'
+            }
+            else if (caps === "off"){
+                stringVisor += 'b'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button43").click(function(){
 
-            stringVisor += 'n'
+            if (caps === "on"){
+                stringVisor += 'N'
+            }
+            else if (caps === "off"){
+                stringVisor += 'n'
+            }
             $("#textVisor").val(stringVisor);
         });
 
         $("#button44").click(function(){
 
-            stringVisor += 'm'
+            if (caps === "on"){
+                stringVisor += 'M'
+            }
+            else if (caps === "off"){
+                stringVisor += 'm'
+            }
             $("#textVisor").val(stringVisor);
         });
 
@@ -474,15 +638,6 @@ $(document).ready(function(){
             $("#textVisor").val(stringVisor);
         });
 
-
-
-
-
     }
 
-
-
-
-    
-    
 });
