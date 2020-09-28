@@ -4,6 +4,10 @@
     height: 60px;
     border: 0;
     border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .button-keyboard-two-spaces{
@@ -12,6 +16,10 @@
     height: 60px;
     border: 0;
     border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .button-keyboard-three-spaces{
@@ -20,6 +28,10 @@
     height: 60px;
     border: 0;
     border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .button-keyboard-eight-spaces{
@@ -28,6 +40,10 @@
     height: 60px;
     border: 0;
     border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .div-text-area{
@@ -71,6 +87,18 @@
     border: 0;
     border-radius: 10px;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Botão Alt ativo */
+.button-keyboard-active{
+    background-color:  #f89419;
+    width: 65px;
+    height: 60px;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
     font-weight: bold;
 }

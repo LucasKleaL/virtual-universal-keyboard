@@ -6,6 +6,7 @@ $(document).ready(function(){
     var caps = "off"
     var shift = "off"
     var alt = "off"
+    var altgr = "off"
     var ctrl = "off"
 
     //variaveis de acentos
@@ -42,6 +43,13 @@ $(document).ready(function(){
         $("#textVisor").val(stringVisor)
     });
 
+    $(document).keypress(function(space){
+        if (space.wich == 32 || space.keyCode == 32){
+            stringVisor += " "
+            $("#textVisor").val(stringVisor)
+        }
+    });
+
     $("#buttonLeftShift").click(function(){ //botão shift esquerdo
 
         if (shift === "on"){ //verifica se o shift está ativo
@@ -66,20 +74,20 @@ $(document).ready(function(){
 
     $("#buttonRightShift").click(function(){ //botão shift direito
 
-        if (shift === "on"){
-            shift = "off"
+        if (shift === "on"){ //verifica se o shift está ativo
+            shift = "off" //se estiver, desativa
         }
-        else if (shift === "off"){
-            shift = "on"
+        else if (shift === "off"){ //verifica se o shift está desativado
+            shift = "on" //se estiver, ativa
         }
 
-        if (shift === "on"){
+        if (shift === "on"){ //verifica se shift está ativo, se estiver, muda a classe, alterando a cor do botão
             $("#buttonRightShift").removeClass("button-keyboard-three-spaces")
             $("#buttonLeftShift").removeClass("button-keyboard-two-spaces")
             $("#buttonRightShift").addClass("button-right-shift-active")
             $("#buttonLeftShift").addClass("button-left-shift-active")
         }
-        else if (shift === "off"){
+        else if (shift === "off"){ //verifica se o shift está inativo, se estiver, muda a classe, alterando a cor do botão para padrão
             $("#buttonRightShift").removeClass("button-right-shift-active")
             $("#buttonLeftShift").removeClass("button-left-shift-active")
             $("#buttonRightShift").addClass("button-keyboard-three-spaces")
@@ -89,42 +97,98 @@ $(document).ready(function(){
 
     $("#buttonLeftAlt").click(function(){ //botão alt esquerdo
 
-        alt = "on"
+        if (alt === "off"){ //verifica se o alt está inativo
+            alt = "on" //se estiver, ativa
+        }
+        else if (alt === "on"){ //verifica se o alt está ativo
+            alt = "off" //se estiver, desativa
+        }
 
+        if (alt === "on"){
+            $("#buttonLeftAlt").removeClass("button-keyborad")
+            $("#buttonLeftAlt").addClass("button-keyboard-active")
+        }
+        else if (alt === "off"){
+            $("#buttonLeftAlt").removeClass("button-keyboard-active")
+            $("#buttonLeftAlt").addClass("button-keyboard")
+        }
     });
 
     $("#buttonRightAlt").click(function(){ //botão alt direito
 
-        alt = "on"
+        if (altgr === "off"){ //verifica se o alt direito está inativo
+            altgr = "on" //se estiver, ativa
+        }
+        else if (altgr === "on"){ //verifica se o alt direito está ativo
+            altgr = "off" //se estiver, desativa
+        }
 
+        if (altgr === "on"){ //mudança no estilo do botão alt ao ficar ativo (cor)
+            $("#buttonRightAlt").removeClass("button-keyboard")
+            $("#buttonRightAlt").addClass("button-keyboard-active")
+        }
+        else if (altgr === "off"){ //mudança no estilo do botão alt ao ficar inativo (cor padrão)
+            $("#buttonRightAlt").removeClass("button-keyboard-active")
+            $("#buttonRightAlt").addClass("button-keyboard")
+        }
     });
 
     $("#buttonLeftCtrl").click(function(){ //botão ctrl esquerdo
 
-        ctrl = "on"
+        if (ctrl === "off"){ //verifica se o botão ctrl está inativo
+            ctrl = "on" //se estiver, ativa
+        }
+        else if (ctrl === "on"){ //verifica se o botão ctrl está ativo
+            ctrl = "off" //se estiver, desativa
+        }
+
+        if (ctrl === "on"){
+            $("#buttonLeftCtrl").removeClass("button-keyboard")
+            $("#buttonRightCtrl").removeClass("button-keyboard")
+            $("#buttonLeftCtrl").addClass("button-keyboard-active")
+            $("#buttonRightCtrl").addClass("button-keyboard-active")
+        }
+        else if (ctrl === "off"){
+            $("#buttonLeftCtrl").removeClass("button-keyboard-active")
+            $("#buttonRightCtrl").removeClass("button-keyboard-active")
+            $("#buttonLeftCtrl").addClass("button-keyboard")
+            $("#buttonRightCtrl").addClass("button-keyboard")
+        }
 
     });
 
     $("#buttonRightCtrl").click(function(){ //botão ctrl direito
 
-        ctrl = "on"
+        if (ctrl === "off"){ //verifica se o botão ctrl direito está inativo
+            ctrl = "on" //se estiver, ativa
+        }
+        else if (ctrl === "on"){ //verifica se o botão ctrl direito está ativo
+            ctrl = "off" //se estiver, desativa
+        }
 
     });
 
-    $("#buttonCaps").click(function(){ //botão caps look
+    $("#buttonTab").click(function(){
 
-        if (caps === "off"){
-            caps = "on"
+        stringVisor += "    "
+        $("#textVisor").val(stringVisor)
+
+    });
+
+    $("#buttonCaps").click(function(){ //botão caps lock
+
+        if (caps === "off"){ //verifica se o botão caps lock
+            caps = "on" //se estiver, ativa
         }
-        else if (caps === "on"){
-            caps = "off"
+        else if (caps === "on"){ //verifica se o botão caps lock
+            caps = "off" //se estiver, desativa
         }
 
-        if (caps === "on"){
+        if (caps === "on"){ //mudança no estilo do botão caps ao ficar ativo (cor)
             $("#buttonCaps").removeClass("button-keyboard-two-spaces")
             $("#buttonCaps").addClass("button-caps-active")
         }
-        else if (caps === "off"){
+        else if (caps === "off"){ //mudança no estilo do botão caps ao ficar inativo (cor padrão)
             $("#buttonCaps").removeClass("button-caps-active")
             $("#buttonCaps").addClass("button-keyboard-two-spaces")
         }
@@ -304,10 +368,10 @@ $(document).ready(function(){
 
         $("#button14").click(function(){
 
-            if (caps === "on"){
+            if (caps === "on"){ //verifica se o caps lock está ativo, se estiver letra fica maiúscula
                 stringVisor += 'Q'
             }
-            else if (caps === "off"){
+            else if (caps === "off"){ //verifica se o caps lock está desativado, se estiver a letra fica minúscula 
                 stringVisor += 'q'
             }
             $("#textVisor").val(stringVisor);
